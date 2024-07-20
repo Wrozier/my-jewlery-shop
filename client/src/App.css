@@ -1,0 +1,64 @@
+/* client/src/App.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header, .footer {
+  background-color: #333;
+  color: rgb(101, 12, 164);
+  text-align: center;
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  background-color: #444;
+}
+
+.navbar a {
+  color: rgb(54, 5, 191);
+  text-decoration: none;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.product-catalog, .product-detail, .cart, .checkout, .admin-dashboard {
+  text-align: center;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product-item, .cart-item {
+  border: 1px solid #1bacd4;
+  padding: 10px;
+  text-align: left;
+}
+
+.cart-total, .checkout-form {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .navbar {
+      flex-direction: column;
+      align-items: center;
+  }
+}
