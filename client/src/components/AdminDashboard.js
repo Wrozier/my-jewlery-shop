@@ -1,8 +1,7 @@
 // client/src/pages/AdminDashboard.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../styles/AdminDashboardStyles.css'
-import adminDashboardStyles from '../styles/AdminDashboardStyles';
+import '../styles/AdminDashboardStyles.css';
 
 const AdminDashboard = () => {
     const [products, setProducts] = useState([]);
@@ -22,22 +21,22 @@ const AdminDashboard = () => {
     }, []);
 
     return (
-        <div style={adminDashboardStyles.container}>
-            <h1 style={adminDashboardStyles.title}>Admin Dashboard</h1>
-            <div style={adminDashboardStyles.section}>
+        <div className="container">
+            <h1 className="title">Admin Dashboard</h1>
+            <div className="section">
                 <h2>Products</h2>
                 {products.map(product => (
-                    <div key={product._id} style={adminDashboardStyles.product}>
+                    <div key={product._id} className="product">
                         <h3>{product.name}</h3>
                         <p>{product.description}</p>
                         <p>${product.price}</p>
                     </div>
                 ))}
             </div>
-            <div style={adminDashboardStyles.section}>
+            <div className="section">
                 <h2>Orders</h2>
                 {orders.map(order => (
-                    <div key={order._id} style={adminDashboardStyles.order}>
+                    <div key={order._id} className="order">
                         <h3>Order {order._id}</h3>
                         <p>Status: {order.status}</p>
                         <p>Total: ${order.total}</p>

@@ -1,20 +1,20 @@
 // client/src/App.js
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Pages/Home';
+import Home from './pages/Home';
 import Login from './pages/Login';
-import Register from './Pages/Register';
-import ProductCatalog from './Pages/ProductCatalog';
-import ProductDetail from './Pages/ProductDetail';
-import Cart from './Pages/Cart';
-import Checkout from './Pages/Checkout';
-import AdminDashboard from './Pages/AdminDashboard';
+import Register from './pages/Register';
+import ProductCatalog from './pages/ProductCatalog';
+import ProductDetail from './pages/ProductDetail';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import AdminDashboard from './pages/AdminDashboard';
 // ... other imports
 
 function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/home" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/catalog" element={<ProductCatalog />} />
