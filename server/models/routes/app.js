@@ -5,14 +5,14 @@ const passport = require('passport');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const bodyParser = require('body-parser');
-const userRoutes = require('./routes/users');
+const userRoutes = require('./users');
 const productRoutes = require('./routes/products');
 const orderRoutes = require('./routes/orders');
 
 const app = express();
 
 // Passport config
-require('./config/passport')(passport);
+require('../config/passport')(passport);
 
 // MongoDB connection
 mongoose.connect('mongodb://localhost:27017/jewelry-shop', {

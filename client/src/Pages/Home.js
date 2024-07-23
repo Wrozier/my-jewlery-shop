@@ -1,3 +1,5 @@
+// src/pages/Home.js
+
 import React, { useState, useEffect } from 'react';
 import '../styles/HomeStyles.css';
 
@@ -44,39 +46,6 @@ const Home = () => {
                         <div className="rating-comments">
                             <div className="rating">Rating: ★★★★★</div>
                             <div className="comments">Comments: "Absolutely stunning!"</div>
-                        </div>
-                    </div>
-                </div>
-                <div className="jewelry-card">
-                    <img src="https://via.placeholder.com/300x300?text=Jewelry+3" alt="Jewelry Item 3" />
-                    <div className="jewelry-info">
-                        <h2>Gold Bracelet</h2>
-                        <p>Sleek and stylish gold bracelet that complements any outfit. A timeless accessory.</p>
-                        <div className="rating-comments">
-                            <div className="rating">Rating: ★★★★☆</div>
-                            <div className="comments">Comments: "Perfect gift for my wife!"</div>
-                        </div>
-                    </div>
-                </div>
-                <div className="jewelry-card">
-                    <img src="https://via.placeholder.com/300x300?text=Jewelry+4" alt="Jewelry Item 4" />
-                    <div className="jewelry-info">
-                        <h2>Emerald Earrings</h2>
-                        <p>Elegant emerald earrings that shine with sophistication. Great for formal events.</p>
-                        <div className="rating-comments">
-                            <div className="rating">Rating: ★★★★★</div>
-                            <div className="comments">Comments: "They are stunning and sparkly!"</div>
-                        </div>
-                    </div>
-                </div>
-                <div className="jewelry-card">
-                    <img src="https://via.placeholder.com/300x300?text=Jewelry+5" alt="Jewelry Item 5" />
-                    <div className="jewelry-info">
-                        <h2>Platinum Ring</h2>
-                        <p>Luxurious platinum ring with a classic design. Perfect for engagements or anniversaries.</p>
-                        <div className="rating-comments">
-                            <div className="rating">Rating: ★★★★☆</div>
-                            <div className="comments">Comments: "Amazing quality, worth the price."</div>
                         </div>
                     </div>
                 </div>

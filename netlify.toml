@@ -1,0 +1,12 @@
+[build]
+  base    = "client"           # Set the base directory to 'client'
+  publish = "client/build"     # Directory to publish
+  command = "npm run build"    # Command to build the project
+
+[context.production.environment]
+  NODE_ENV = "production"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
