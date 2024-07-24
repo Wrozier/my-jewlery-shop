@@ -1,6 +1,6 @@
 .header {
     background: #333;
-    color: white;
+    color: rgb(17, 177, 52);
     padding: 20px;
 }
 
@@ -19,6 +19,6 @@
 }
 
 .header nav ul li a {
-    color: white;
+    color: rgb(147, 24, 24);
     text-decoration: none;
 }
