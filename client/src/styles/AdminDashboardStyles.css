@@ -1,0 +1,153 @@
+/* AdminDashboardStyles.css */
+
+/* General Container */
+.admin-dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header */
+  .admin-header {
+    background-color: #004d40;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .admin-header h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .admin-header .admin-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+  }
+  
+  .admin-header .admin-nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Sidebar */
+  .admin-sidebar {
+    width: 250px;
+    background-color: #00796b;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px);
+  }
+  
+  .admin-sidebar h2 {
+    font-size: 18px;
+    margin-top: 0;
+  }
+  
+  .admin-sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .admin-sidebar ul li {
+    margin-bottom: 15px;
+  }
+  
+  .admin-sidebar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .admin-sidebar ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Main Content */
+  .admin-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px; /* Sidebar width */
+  }
+  
+  /* Buttons */
+  .admin-button {
+    background-color: #004d40;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .admin-button:hover {
+    background-color: #003d33;
+  }
+  
+  /* Forms */
+  .admin-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .admin-form input,
+  .admin-form select,
+  .admin-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .admin-form input[type="submit"] {
+    background-color: #004d40;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .admin-form input[type="submit"]:hover {
+    background-color: #003d33;
+  }
+  
+  /* Tables */
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .admin-table th,
+  .admin-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .admin-table th {
+    background-color: #004d40;
+    color: #ffffff;
+  }
+  
+  .admin-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
