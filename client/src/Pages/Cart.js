@@ -1,7 +1,6 @@
 // client/src/pages/Cart.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import '../styles/CartStyles.css';
 
 

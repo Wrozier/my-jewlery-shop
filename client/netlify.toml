@@ -1,0 +1,5 @@
+[build]
+  base    = "client"           # Set the base directory to 'client'
+  publish = "client/build"     # Directory to publish
+  command = "npm run build"    # Command to build the project
+

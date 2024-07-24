@@ -29,8 +29,8 @@
 }
 
 .checkout-button {
-    background-color: #6a5acd;
-    color: white;
+    background-color: #cdbf8d;
+    color: rgb(218, 66, 66);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
