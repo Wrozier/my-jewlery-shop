@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-//import Breadcrums from '../components/BreadCrums/BreadCrums'
+import BreadCrums from '../components/BreadCrums/BreadCrums'
 import ProductDisplay from '../components/ProductDisplay/ProductDisplay'
 import DescriptionBox from '../components/DescriptionBox/DescriptionBox'
 import RelatedProducts from '../components/RelatedProducts/RelatedProducts'
@@ -20,7 +20,7 @@ const Product = () => {
 
   return product ? (
     <div>
-      <Breadcrums product={product}/>
+      <BreadCrums product={product}/>
       <ProductDisplay product={product}/>
       <DescriptionBox/>
       <RelatedProducts id={product.id} category={product.category}/>
