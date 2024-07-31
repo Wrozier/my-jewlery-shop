@@ -2,7 +2,7 @@ import React from 'react'
 import './Breadcrums.css'
 import arrow_icon from '../Assets/breadcrum_arrow.png'
 
-const Breadcrums = (props) => {
+const BreadCrums = (props) => {
   const {product} = props;
   return (
     <div className='Breadcrums'>
@@ -11,4 +11,4 @@ const Breadcrums = (props) => {
   )
 }
 
-export default Breadcrums 
+export default BreadCrums 
