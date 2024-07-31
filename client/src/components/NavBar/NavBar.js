@@ -6,6 +6,8 @@ import cart_icon from '../Assets/cart_icon.png'
 import { ShopContext } from '../../context/ShopContext'
 import nav_dropdown from '../Assets/nav_dropdown.png'
 
+
+
 const Navbar = () => {
 
   let [menu,setMenu] = useState("shop");
