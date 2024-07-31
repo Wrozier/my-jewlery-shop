@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import { backend_url } from "../App";
+import { backend_url } from "../App.js";
 
 export const ShopContext = createContext(null);
 

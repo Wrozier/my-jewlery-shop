@@ -3,7 +3,7 @@ import "./ProductDisplay.css";
 import star_icon from "../Assets/star_icon.png";
 import star_dull_icon from "../Assets/star_dull_icon.png";
 import { ShopContext } from "../../context/ShopContext";
-import { backend_url, currency } from "../../App";
+import { backend_url, currency } from "../../App.js";
 
 const ProductDisplay = ({product}) => {
 

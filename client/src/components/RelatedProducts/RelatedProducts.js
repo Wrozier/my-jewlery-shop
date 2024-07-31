@@ -1,37 +1,28 @@
-import React, { useEffect, useState } from 'react'
-import './RelatedProducts.css'
-import Item from '../Item/Item'
-import { backend_url } from '../../App';
+import React, { useEffect, useState } from 'react';
 
-const RelatedProducts = ({category,id}) => {
+const RelatedProducts = ({ category }) => {
+  const [products, setProducts] = useState([]);
 
-  const [related,setRelated] = useState([]);
+  useEffect(() => {
+    // Fetch related products based on category
+    const fetchRelatedProducts = async (category) => {
+      // Mock fetch function, replace with actual API call
+      return [
+        { id: 1, name: 'Product 1' },
+        { id: 2, name: 'Product 2' },
+      ];
+    };
 
-  useEffect(()=>{
-    fetch(`${backend_url}/relatedproducts`,{
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({category:category}),
-      })
-    .then((res)=>res.json()).then((data)=>setRelated(data))
-  },[])
+    fetchRelatedProducts(category).then(setProducts);
+  }, [category]); // Add 'category' to the dependency array
 
   return (
-    <div className='relatedproducts'>
-      <h1>Related Products</h1>
-      <hr />
-      <div className="relatedproducts-item">
-        {related.map((item,index)=>{
-          if (id !== item.id) {
-            return <Item key={index} id={item.id} name={item.name} image={item.image}  new_price={item.new_price} old_price={item.old_price}/>
-          }
-        })}
-      </div>
+    <div>
+      {products.map(product => {
+        return <div key={product.id}>{product.name}</div>; // Ensure a value is returned
+      })}
     </div>
-  )
-}
+  );
+};
 
-export default RelatedProducts
+export default RelatedProducts;
