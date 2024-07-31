@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 import './Breadcrums.css'
 import arrow_icon from '../Assets/breadcrum_arrow.png'
 
@@ -11,4 +11,4 @@ const BreadCrums = (props) => {
   )
 }
 
-export default BreadCrums
+export default BreadCrums */
