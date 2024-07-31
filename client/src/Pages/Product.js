@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import Breadcrums from '../components/BreadCrums/BreadCrums'
+//import Breadcrums from '../components/BreadCrums/BreadCrums'
 import ProductDisplay from '../components/ProductDisplay/ProductDisplay'
 import DescriptionBox from '../components/DescriptionBox/DescriptionBox'
 import RelatedProducts from '../components/RelatedProducts/RelatedProducts'
