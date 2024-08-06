@@ -1,4 +1,7 @@
 [build]
-  base = "client"
+  base = "/"
+  publish = "build"
   command = "npm run build"
-  publish = "client/build"
+
+[build.environment]
+  NODE_ENV = "production"
