@@ -3,10 +3,10 @@ import './Navbar.css'
 import { Link } from 'react-router-dom'
 import logo from '../Assets/logo.png'
 import cart_icon from '../Assets/cart_icon.png'
-import { ShopContext } from '../context/ShopContext'
+import { ShopContext } from '../../context/ShopContext'
 import nav_dropdown from '../Assets/nav_dropdown.png'
 
-const Navbar = () => {
+const NavBar = () => {
 
   let [menu,setMenu] = useState("shop");
   const {getTotalCartItems} = useContext(ShopContext);
@@ -42,4 +42,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default NavBar
