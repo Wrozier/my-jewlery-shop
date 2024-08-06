@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
-import BreadCrums from '../components/BreadCrums/BreadCrums'
-import ProductDisplay from '../components/ProductDisplay/ProductDisplay'
-import DescriptionBox from '../components/DescriptionBox/DescriptionBox'
-import RelatedProducts from '../components/RelatedProducts/RelatedProducts'
+import BreadCrums from '../Components/BreadCrums/BreadCrums'
+import ProductDisplay from '../Components/ProductDisplay/ProductDisplay'
+import DescriptionBox from '../Components/DescriptionBox/DescriptionBox'
+import RelatedProducts from '../Components/RelatedProducts/RelatedProducts'
 import { useParams } from 'react-router-dom'
-import { ShopContext } from '../context/ShopContext'
+import { ShopContext } from '../Context/ShopContext';
+
 
 
 

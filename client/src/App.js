@@ -1,7 +1,7 @@
-import Navbar from "./Components/NavBar/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Shop from "./Pages/Shop";
 import Cart from "./Pages/Cart";
+import Navbar from "./Components/NavBar/Navbar";
 import Product from "./Pages/Product";
 import Footer from "./Components/Footer/Footer";
 import ShopCategory from "./Pages/ShopCategory";
@@ -36,4 +36,3 @@ function App() {
 }
 
 export default App;
-

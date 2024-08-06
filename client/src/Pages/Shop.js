@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import Hero from '../components/Hero/Hero'
-import Popular from '../components/Popular/Popular'
-import Offers from '../components/Offers/Offers'
-import NewCollections from '../components/NewCollections/NewCollections'
-import NewsLetter from '../components/NewsLetter/NewsLetter'
+import Hero from '../Components/Hero/Hero';
+import Popular from '../Components/Popular/Popular';
+import Offers from '../Components/Offers/Offers';
+import NewCollections from '../Components/NewCollections/NewCollections';
+import NewsLetter from '../Components/NewsLetter/NewsLetter';
+
 
 const Shop = () => {
 
