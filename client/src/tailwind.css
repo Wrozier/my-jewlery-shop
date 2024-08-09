@@ -1,0 +1,11 @@
+/* src/tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* Custom styles */
+.custom-class {
+  @apply bg-blue-500 text-white p-4 rounded;
+}

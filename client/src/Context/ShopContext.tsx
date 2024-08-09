@@ -1,26 +1,51 @@
-import React, { createContext, useEffect, useState } from "react";
-import { backend_url } from "../App.js";
+import React, { createContext, useEffect, useState, ReactNode } from "react";
+import { backend_url } from "../App";
 
-export const ShopContext = createContext(null);
+interface Product {
+  id: number;
+  image: string;
+  name: string;
+  old_price: number;
+  new_price: number;
+  description: string;
+  category: string;
+}
 
-const ShopContextProvider = (props) => {
+interface CartItems {
+  [key: number]: number;
+}
 
-  const [products, setProducts] = useState([]);
+export interface ShopContextType {
+  products: Product[];
+  getTotalCartItems: () => number;
+  cartItems: CartItems;
+  addToCart: (itemId: number) => void;
+  removeFromCart: (itemId: number) => void;
+  getTotalCartAmount: () => number;
+}
 
-  const getDefaultCart = () => {
-    let cart = {};
+export const ShopContext = createContext<ShopContextType | null>(null);
+
+interface ShopContextProviderProps {
+  children: ReactNode;
+}
+
+const ShopContextProvider: React.FC<ShopContextProviderProps> = ({ children }) => {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [cartItems, setCartItems] = useState<CartItems>(getDefaultCart());
+
+  function getDefaultCart(): CartItems {
+    let cart: CartItems = {};
     for (let i = 0; i < 300; i++) {
       cart[i] = 0;
     }
     return cart;
-  };
-
-  const [cartItems, setCartItems] = useState(getDefaultCart());
+  }
 
   useEffect(() => {
     fetch(`${backend_url}/allproducts`)
       .then((res) => res.json())
-      .then((data) => setProducts(data))
+      .then((data) => setProducts(data));
 
     if (localStorage.getItem("auth-token")) {
       fetch(`${backend_url}/getcart`, {
@@ -30,40 +55,44 @@ const ShopContextProvider = (props) => {
           'auth-token': `${localStorage.getItem("auth-token")}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(),
+        body: JSON.stringify({}),
       })
         .then((resp) => resp.json())
-        .then((data) => { setCartItems(data) });
+        .then((data) => { setCartItems(data); });
     }
-  }, [])
+  }, []);
 
-  const getTotalCartAmount = () => {
+  const getTotalCartAmount = (): number => {
     let totalAmount = 0;
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
         try {
           let itemInfo = products.find((product) => product.id === Number(item));
-          totalAmount += cartItems[item] * itemInfo.new_price;
+          if (itemInfo) {
+            totalAmount += cartItems[item] * itemInfo.new_price;
+          }
         } catch (error) {}
       }
     }
     return totalAmount;
   };
 
-  const getTotalCartItems = () => {
+  const getTotalCartItems = (): number => {
     let totalItem = 0;
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
         try {
           let itemInfo = products.find((product) => product.id === Number(item));
-          totalItem += itemInfo ? cartItems[item] : 0 ;
+          if (itemInfo) {
+            totalItem += cartItems[item];
+          }
         } catch (error) {}
       }
     }
     return totalItem;
   };
 
-  const addToCart = (itemId) => {
+  const addToCart = (itemId: number): void => {
     if (!localStorage.getItem("auth-token")) {
       alert("Please Login");
       return;
@@ -78,11 +107,11 @@ const ShopContextProvider = (props) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ "itemId": itemId }),
-      })
+      });
     }
   };
 
-  const removeFromCart = (itemId) => {
+  const removeFromCart = (itemId: number): void => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     if (localStorage.getItem("auth-token")) {
       fetch(`${backend_url}/removefromcart`, {
@@ -93,14 +122,22 @@ const ShopContextProvider = (props) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ "itemId": itemId }),
-      })
+      });
     }
   };
 
-  const contextValue = { products, getTotalCartItems, cartItems, addToCart, removeFromCart, getTotalCartAmount };
+  const contextValue: ShopContextType = {
+    products,
+    getTotalCartItems,
+    cartItems,
+    addToCart,
+    removeFromCart,
+    getTotalCartAmount,
+  };
+
   return (
     <ShopContext.Provider value={contextValue}>
-      {props.children}
+      {children}
     </ShopContext.Provider>
   );
 };
